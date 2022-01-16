@@ -7,6 +7,12 @@
     {{ $pages = .Pages }}
   {{ end }}
 
+  {{ if (eq .Kind "term") }}
+    <h1><code>#{{ .LinkTitle }}</code></h1>
+  {{ else }}
+    <h1>{{ .LinkTitle }}</h1>
+  {{ end }}
+
   {{ range (sort $pages "Date" "desc") }}
     {{ $pageYear := (.Date.Format "2006") }}
     {{ if (ne $pageYear ($.Scratch.Get "year")) }}
@@ -17,7 +23,7 @@
       <div class="meta">
         <time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}</time>
       </div>
-      <span>    
+      <span>
         <a class="" href="{{ .Permalink }}">{{ if .Title }} {{ .Title }} {{ else }} Untitled {{ end }}</a>
       </span>
     </li>

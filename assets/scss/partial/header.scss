@@ -46,6 +46,7 @@
       padding: 0;
       list-style-type: none;
       line-height: 15px;
+      display: flex;
 
       a {
         margin-right: 15px;
@@ -58,7 +59,7 @@
         display: inline-block;
         margin-right: 15px;
         border-right: 1px dotted;
-        border-color: $color-accent-1;
+        border-color: $color-accent-2;
         vertical-align: middle;
       }
       .icon {
@@ -95,6 +96,7 @@
   }
   #header #nav {
     ul {
+      flex-direction: column;
       a:hover {
         background: none;
       }

@@ -6,6 +6,8 @@
 
   {{ partial "page_nav.html" . }}
 
+  {{ partial "back_button.html" . }}
+
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
@@ -77,6 +79,15 @@
       {{ .Content}}
     </div>
   </article>
+
+  <div style="margin: 2rem 0;">
+    {{with .PrevInSection }}
+      <a style="float: left;" href="{{ .Permalink }}"><i class="fas fa-angle-left"></i> Prev</a>
+    {{end}}
+    {{with .NextInSection }}
+      <a style="float: right;" href="{{ .Permalink}}">Next <i class="fas fa-angle-right"></i></a>
+    {{end}}
+  </div>
 
   {{ partial "comments.html" . }}
 

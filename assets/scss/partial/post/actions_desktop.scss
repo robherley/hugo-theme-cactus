@@ -112,7 +112,7 @@
         @include underline(5px, $color-accent-1);
       }
       li {
-        border-right: 1px dotted $color-accent-1;
+        border-right: 1px dotted $color-accent-2;
       }
       li:last-child {
         margin-right: 0;
